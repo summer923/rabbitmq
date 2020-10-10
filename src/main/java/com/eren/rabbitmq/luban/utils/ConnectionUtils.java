@@ -13,6 +13,7 @@ public class ConnectionUtils {
     public static final String RABBITMQ_PASSWORD = "eren";
     public static final String RABBITMQ_VIRTUALHOST = "testhost";
     public static final String QUEUE_NAME = "testQueue";
+    public static final String QUEUE_NAME2 = "testQueue2";
     public static final String EXCHANGE_NAME = "exchange";
 
     public static Connection getConnection() throws IOException, TimeoutException {
@@ -21,7 +22,7 @@ public class ConnectionUtils {
         connectionFactory.setPort(RABBITMQ_PORT);
         connectionFactory.setUsername(RABBITMQ_USERNAME);
         connectionFactory.setPassword(RABBITMQ_PASSWORD);
-        connectionFactory.setVirtualHost("/");
+        connectionFactory.setVirtualHost(RABBITMQ_VIRTUALHOST);
         return connectionFactory.newConnection();
     }
 }
